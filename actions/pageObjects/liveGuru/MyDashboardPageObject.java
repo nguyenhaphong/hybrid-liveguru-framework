@@ -3,6 +3,7 @@ package pageObjects.liveGuru;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import pageUIs.liveguru.MyDashboardPageUI;
 
 public class MyDashboardPageObject extends AbstractPage {
 	private WebDriver driver;
@@ -12,8 +13,8 @@ public class MyDashboardPageObject extends AbstractPage {
 	}
 
 	public String getWelcomeSuccessMessage() {
-		// TODO Auto-generated method stub
-		return null;
+		waitElementVisible(driver, MyDashboardPageUI.WELCOME_MESSAGE_TEXT);
+		return getElementText(driver, MyDashboardPageUI.WELCOME_MESSAGE_TEXT);
 	}
 
 }

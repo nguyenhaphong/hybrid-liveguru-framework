@@ -138,7 +138,7 @@ public abstract class AbstractPage {
 		find(driver, xpathValue).click();
 	}
 	
-	public void sendKeyToElement (WebDriver driver, String xpathValue) {
+	public void sendKeyToElement(WebDriver driver, String emailTextbox, String xpathValue) {
 		element = find(driver, xpathValue);
 		element.clear();
 		element.sendKeys(xpathValue);
@@ -242,17 +242,17 @@ public abstract class AbstractPage {
 		action.moveToElement(find(driver, xpathValue)).perform();
 	}
 	
-	public void WaitElementInvisible(WebDriver driver, String xpathValue) {
+	public void waitElementInvisible(WebDriver driver, String xpathValue) {
 		explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(xpathValue)));
 	}
 	
-	public void WaitElementVisible(WebDriver driver, String xpathValue) {
+	public void waitElementVisible(WebDriver driver, String xpathValue) {
 		explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(byXpath(xpathValue)));
 	}
 	
-	public void WaitElemenClickable(WebDriver driver, String xpathValue) {
+	public void waitElemenClickable(WebDriver driver, String xpathValue) {
 		explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(xpathValue)));
 	}

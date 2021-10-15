@@ -13,7 +13,7 @@ public class LoginPageObject extends AbstractPage{
 	}
 
 	public void clickToCreateAnAccountButton() {
-		WaitElemenClickable(driver, LoginPageUI.CREATE_AN_ACCOUNT_BUTTON);
+		waitElemenClickable(driver, LoginPageUI.CREATE_AN_ACCOUNT_BUTTON);
 		clickToElement(driver, LoginPageUI.CREATE_AN_ACCOUNT_BUTTON);
 		
 	}
