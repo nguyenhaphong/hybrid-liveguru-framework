@@ -28,7 +28,7 @@ public class User_01_Register_To_System {
 	@BeforeMethod
 	public void beforeMethod() {
 		// Open my account page
-		driver.findElement(By.xpath("//div[@class='footer']//a[text()='My Account']")).click();
+		driver.findElement(By.xpath( )).click();
 		
 		// Opent Register page
 		driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
