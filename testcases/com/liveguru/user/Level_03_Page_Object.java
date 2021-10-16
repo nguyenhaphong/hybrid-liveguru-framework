@@ -2,10 +2,7 @@ package com.liveguru.user;
 
 import org.testng.annotations.Test;
 
-import pageObjects.liveGuru.HomePageObject;
-import pageObjects.liveGuru.LoginPageObject;
-import pageObjects.liveGuru.MyDashboardPageObject;
-import pageObjects.liveGuru.RegisterPageObject;
+import pageObjects.liveGuru.*;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -25,6 +22,7 @@ public class Level_03_Page_Object {
 	LoginPageObject loginPage;
 	RegisterPageObject registerPage;
 	MyDashboardPageObject myDashboardPage;
+	MyAdressBookPageObject myAddressBookPage;
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -113,6 +111,21 @@ public class Level_03_Page_Object {
 		myDashboardPage = new MyDashboardPageObject(driver);
 		Assert.assertEquals(myDashboardPage.getWelcomeSuccessMessage(), "Thank you for registering Main Website Store.");
 		
+	}
+
+	@Test
+	public void Register_06_Manage_Address_Book () {
+		myDashboardPage.clicktoManageAddreesLink();
+		myAddressBookPage = new MyAdressBookPageObject(driver);
+
+		myAddressBookPage.inputToTelephoneTextbox("0869996666");
+		myAddressBookPage.inputToStreetAddressTextbox("123abc");
+		myAddressBookPage.inputToCityTextbox("Ha Noi");
+		myAddressBookPage.inputToZipTextbox("100000");
+		myAddressBookPage.selectValueInCountryDropdown("Viet Nam");
+		myAddressBookPage.clickToSaveAddressButton();
+		Assert.assertTrue(myAddressBookPage.isAddressSuccessMessageDisplayed());
+	}
 	}
  
 

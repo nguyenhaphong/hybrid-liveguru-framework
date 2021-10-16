@@ -17,4 +17,9 @@ public class MyDashboardPageObject extends AbstractPage {
 		return getElementText(driver, MyDashboardPageUI.WELCOME_MESSAGE_TEXT);
 	}
 
+	public void clickToManageAddressLink() {
+		waitElemenClickable(driver, MyDashboardPageUI.MANAGE_ADDRESS_LINK);
+		clickToElement(driver, MyDashboardPageUI.MANAGE_ADDRESS_LINK);
+	}
+
 }
